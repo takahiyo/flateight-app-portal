@@ -1,2 +1,10 @@
-/* 一覧性・キーボード操作重視の追加スタイル */
-.catalog-controls{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 16px}.catalog-search-label{display:flex;gap:10px;align-items:center;font-size:.9rem;color:#d3dbea}.catalog-controls input,.catalog-controls select{font:inherit;background:#101e2d;color:#f7fbff;border:1px solid #4a6178;padding:10px 12px;border-radius:9px;max-width:100%;min-width:190px}.catalog-controls input{min-width:min(380px,80vw)}.catalog-controls :focus-visible{outline:3px solid #8cf0cf;outline-offset:2px}.trial-label{display:inline-block;margin-top:8px;padding:5px 8px;border:1px solid #59b99e;border-radius:6px;font-size:.75rem}.price{font-variant-numeric:tabular-nums}@media(max-width:650px){.catalog-controls{display:block}.catalog-search-label{margin:12px 0;justify-content:space-between}.catalog-controls input{min-width:0;width:70%}}
+/* カタログの検索・料金フィルター */
+.catalog-controls { display: flex; flex-wrap: wrap; gap: 16px 24px; margin: 24px 0 16px; }
+.catalog-search-label { display: flex; gap: 10px; align-items: center; font-size: 13px; color: #343b43; }
+.catalog-controls input, .catalog-controls select { font: inherit; background: #fcfdfe; color: #17191c; border: 1px solid #959fa9; padding: 11px 12px; border-radius: 9px; max-width: 100%; min-height: 44px; }
+.catalog-controls input { width: 340px; }
+.catalog-controls input::placeholder { color: #626b75; opacity: 1; }
+.catalog-controls select { min-width: 180px; }
+.trial-label { align-self: flex-start; display: inline-block; margin-top: 10px; padding: 4px 8px; border: 1px solid #9ba5af; background: #eef1f4; color: #343b43; border-radius: 6px; font-size: 12px; }
+.price { font-variant-numeric: tabular-nums; }
+@media (max-width: 650px) { .catalog-controls { flex-direction: column; gap: 12px; } .catalog-search-label { flex-wrap: wrap; align-items: stretch; gap: 6px; } .catalog-controls input, .catalog-controls select { width: 100%; min-width: 0; } }
