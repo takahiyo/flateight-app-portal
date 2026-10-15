@@ -1,0 +1,187 @@
+{
+  "apps": [
+    {
+      "id": "bookreader",
+      "name": "BookReader",
+      "subtitle": "EPUB・画像書庫を快適に読む",
+      "description": "EPUB、ZIP、RARに対応したブラウザ型リーダー。オフライン閲覧、しおり、クラウド同期などを搭載。",
+      "category": "読書",
+      "icon": "book",
+      "color": "violet",
+      "status": "available",
+      "visible": true,
+      "featured": true,
+      "url": "https://bookreader.flateight.jp/",
+      "repo": "https://github.com/takahiyo/epubReader",
+      "pricing": "free",
+      "tags": [
+        "PWA",
+        "EPUB",
+        "オフライン"
+      ],
+      "sale": {
+        "model": "free",
+        "enabled": false,
+        "trialAvailable": false,
+        "trialDays": null,
+        "priceJPY": null,
+        "interval": null,
+        "stripePriceId": null,
+        "details": "価格と利用条件は販売開始前に告知します。"
+      },
+      "accountRequired": true
+    },
+    {
+      "id": "lora-panel",
+      "name": "LoRA Panel Studio",
+      "subtitle": "AIキャラクター画像の分割・拡大",
+      "description": "キャラクター資料のグリッド分割、リサイズ、ブラウザ内AI拡大、ZIP書き出しをひとつの画面で。",
+      "category": "クリエイティブ",
+      "icon": "image",
+      "color": "coral",
+      "status": "coming",
+      "visible": true,
+      "featured": true,
+      "url": "",
+      "repo": "https://github.com/takahiyo/Lora_Panel_Studio",
+      "pricing": "undecided",
+      "tags": [
+        "画像編集",
+        "AI",
+        "ブラウザ処理"
+      ],
+      "sale": {
+        "model": "undecided",
+        "enabled": false,
+        "trialAvailable": false,
+        "trialDays": null,
+        "priceJPY": null,
+        "interval": null,
+        "stripePriceId": null,
+        "details": "価格と利用条件は販売開始前に告知します。"
+      },
+      "accountRequired": true
+    },
+    {
+      "id": "withviewer",
+      "name": "WithViewer",
+      "subtitle": "会議に同席するAIアシスタント",
+      "description": "会議音声の文字起こし、記録、要約とAIへの音声・テキスト相談をひとつに。",
+      "category": "AI・仕事",
+      "icon": "wave",
+      "color": "cyan",
+      "status": "development",
+      "visible": true,
+      "featured": true,
+      "url": "",
+      "repo": "https://github.com/takahiyo/WithViewer",
+      "pricing": "undecided",
+      "tags": [
+        "会議",
+        "文字起こし",
+        "AI"
+      ],
+      "sale": {
+        "model": "undecided",
+        "enabled": false,
+        "trialAvailable": false,
+        "trialDays": null,
+        "priceJPY": null,
+        "interval": null,
+        "stripePriceId": null,
+        "details": "価格と利用条件は販売開始前に告知します。"
+      },
+      "accountRequired": true
+    },
+    {
+      "id": "sideai",
+      "name": "SideAI",
+      "subtitle": "ブラウザから複数のAIを活用",
+      "description": "閲覧中のページを参照しながらChatGPT・Claude・Geminiを使えるChromeサイドパネル拡張。",
+      "category": "AI・仕事",
+      "icon": "spark",
+      "color": "blue",
+      "status": "development",
+      "visible": false,
+      "featured": false,
+      "url": "",
+      "repo": "https://github.com/takahiyo/SideAI",
+      "pricing": "undecided",
+      "tags": [
+        "Chrome拡張",
+        "AI"
+      ],
+      "sale": {
+        "model": "undecided",
+        "enabled": false,
+        "trialAvailable": false,
+        "trialDays": null,
+        "priceJPY": null,
+        "interval": null,
+        "stripePriceId": null,
+        "details": "価格と利用条件は販売開始前に告知します。"
+      },
+      "accountRequired": true
+    },
+    {
+      "id": "ankilocal",
+      "name": "AnkiLocal",
+      "subtitle": "ローカル動作の学習支援",
+      "description": "Anki形式のデータを読み込み、ローカル環境で反復学習できるWebアプリ。",
+      "category": "学習",
+      "icon": "layers",
+      "color": "green",
+      "status": "development",
+      "visible": false,
+      "featured": false,
+      "url": "",
+      "repo": "https://github.com/takahiyo/AnkiLocal",
+      "pricing": "undecided",
+      "tags": [
+        "学習",
+        "ローカル"
+      ],
+      "sale": {
+        "model": "undecided",
+        "enabled": false,
+        "trialAvailable": false,
+        "trialDays": null,
+        "priceJPY": null,
+        "interval": null,
+        "stripePriceId": null,
+        "details": "価格と利用条件は販売開始前に告知します。"
+      },
+      "accountRequired": true
+    },
+    {
+      "id": "whereabouts",
+      "name": "Whereabouts",
+      "subtitle": "在籍状況・業務情報の管理",
+      "description": "組織内の状況確認や情報共有を支える業務向けWebアプリ。",
+      "category": "AI・仕事",
+      "icon": "grid",
+      "color": "amber",
+      "status": "development",
+      "visible": false,
+      "featured": false,
+      "url": "",
+      "repo": "https://github.com/takahiyo/whereabouts",
+      "pricing": "undecided",
+      "tags": [
+        "業務",
+        "Web"
+      ],
+      "sale": {
+        "model": "undecided",
+        "enabled": false,
+        "trialAvailable": false,
+        "trialDays": null,
+        "priceJPY": null,
+        "interval": null,
+        "stripePriceId": null,
+        "details": "価格と利用条件は販売開始前に告知します。"
+      },
+      "accountRequired": true
+    }
+  ]
+}

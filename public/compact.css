@@ -1,0 +1,25 @@
+/* FLATEIGHT: 見通しのよい商品一覧を優先する追加スタイル */
+:root {color-scheme:light}
+body { background:#f7f9fc; color:#17202d; }
+.ambient,.hero-art {display:none!important}
+.site-header {background:#fff!important; backdrop-filter:none; border-bottom:1px solid #e3e8ef}
+.site-header a,.site-header .brand,.brand {color:#1a2534}
+.hero {display:block!important; padding-top:64px!important; padding-bottom:54px!important; min-height:0!important}
+.hero-copy {max-width:850px!important}
+.hero h1 {font-size:clamp(2rem,4.2vw,3.5rem)!important;line-height:1.25}
+.hero p {font-size:1.02rem!important;line-height:1.85}
+.gradient-text {background:none!important;color:#2563eb!important;-webkit-text-fill-color:#2563eb!important}
+.apps-section {padding-top:58px!important;background:#f7f9fc!important}
+.app-grid {grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important}
+.app-card {border:1px solid #e3e8ef!important;background:#fff!important;box-shadow:none!important;transition:border-color .15s!important}
+.app-card:hover {transform:none!important;border-color:#8fa9da!important}
+.app-visual {min-height:100px!important;height:110px!important;border-radius:10px!important}
+.app-content {padding:20px!important}
+.app-description {line-height:1.65!important}
+.about-section {padding:55px 0!important}
+.footer {background:#fff!important;border-top:1px solid #e3e8ef!important}
+.footer a {color:#415169}
+.footer-nav {display:flex;flex-wrap:wrap;gap:14px}
+.legal-note a {text-decoration:underline}
+@media(max-width:920px){.app-grid {grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:650px){.app-grid {grid-template-columns:1fr!important}.hero {padding-top:40px!important}.site-header nav {gap:10px!important}}

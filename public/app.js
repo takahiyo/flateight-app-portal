@@ -1,0 +1,19 @@
+'use strict';
+const icons = {book:'▤',image:'▧',wave:'◉',spark:'✦',layers:'▣',grid:'▦'};
+const labels = {available:'公開中',coming:'近日公開',development:'開発中'};
+const prices = {free:'無料',paid:'有料',freemium:'基本無料',undecided:''};
+const grid = document.querySelector('#app-grid');
+const filters = document.querySelector('#filters');
+let apps = []; let active = 'すべて'; let query = ''; let billing = 'all';
+function el(tag, className, text){const n=document.createElement(tag); if(className)n.className=className;if(text!==undefined)n.textContent=text;return n}
+function safeUrl(value){try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:null}catch{return null}}
+function draw(){grid.replaceChildren();const selected=apps.filter(a=>(active==='すべて'||a.category===active) && (billing==='all'||(a.sale?.model||'undecided')===billing) && [a.name,a.subtitle,a.description,a.category,...(a.tags||[])].join(' ').toLocaleLowerCase('ja').includes(query));document.querySelector('#empty').hidden=selected.length!==0;
+ for(const app of selected){const card=el('article','app-card');const visual=el('div',`app-visual tone-${['violet','coral','cyan','blue','green','amber'].includes(app.color)?app.color:'violet'}`);const logo=el('div','app-symbol',icons[app.icon]||'✧'); visual.append(logo);const badge=el('span',`status-badge ${app.status==='available'?'is-live':''}`,labels[app.status]||'準備中');visual.append(badge);card.append(visual);
+ const content=el('div','app-content');content.append(el('span','app-category',app.category||'その他'),el('h3','',app.name),el('p','app-subtitle',app.subtitle||''),el('p','app-description',app.description||''));const tags=el('div','tags');for(const t of (app.tags||[]).slice(0,4))tags.append(el('span','tag',t));content.append(tags);
+ const bottom=el('div','app-bottom');const sale=app.sale||{};const saleLabel=sale.enabled && sale.priceJPY!=null ? (sale.model==='subscription'?'月額':sale.model==='one_time'?'買い切り':'有料')+' '+Number(sale.priceJPY).toLocaleString('ja-JP')+'円（税込）' : (sale.model==='free'?'無料':'価格未定'); const p=el('span','price',saleLabel); if(sale.trialAvailable && sale.enabled) content.append(el('span','trial-label','無料体験あり')); if(p.textContent)bottom.append(p);const url=app.status==='available'?safeUrl(app.url):null;if(url){const a=el('a','app-link','アプリを開く ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';bottom.append(a)}else{bottom.append(el('span','soon-link',app.status==='development'?'開発中':'準備中'))}content.append(bottom);card.append(content);grid.append(card)} }
+function init(){apps=apps.filter(a=>a&&a.visible===true&&typeof a.name==='string');document.querySelector('#visible-count').textContent=apps.length;document.querySelector('#app-total').textContent=`${String(apps.length).padStart(2,'0')} APPS`;
+ const categories=[...new Set(apps.map(a=>a.category).filter(Boolean))];for(const cat of categories){const b=el('button','filter',cat);b.type='button';b.dataset.category=cat;b.setAttribute('aria-pressed','false');filters.append(b)}filters.addEventListener('click',e=>{const b=e.target.closest('button[data-category]');if(!b)return;active=b.dataset.category;for(const x of filters.querySelectorAll('button')){const is=x===b;x.classList.toggle('active',is);x.setAttribute('aria-pressed',String(is))}draw()});draw()}
+fetch('./apps.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(d=>{if(!Array.isArray(d.apps))throw Error('Invalid apps.json');apps=d.apps;init()}).catch(()=>{grid.replaceChildren(el('p','loading','アプリ一覧を読み込めませんでした。ページを再読み込みしてください。'))});
+document.querySelector('#year').textContent=new Date().getFullYear();
+
+const q=document.querySelector('#app-search');if(q)q.addEventListener('input',e=>{query=e.target.value.trim().toLocaleLowerCase('ja');draw()});const b=document.querySelector('#billing-filter');if(b)b.addEventListener('change',e=>{billing=e.target.value;draw()});
